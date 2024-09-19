@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/proyecto/noauth")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://172.18.0.1:4200")
 public class AuthenticationController {
 
     private final UserService service;

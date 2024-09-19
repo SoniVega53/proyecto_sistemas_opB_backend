@@ -19,7 +19,7 @@ import com.proyecto.grupo_umg2024.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://172.18.0.1:4200")
 @RequestMapping("/api/proyecto/user")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
