@@ -40,6 +40,11 @@ public class UserService implements ServiceCRUD<User> {
         return res.isPresent() ? res.get() : null;
     }
 
+    public User getFindUncleUsername(String value) {
+        User user = repository.findByUsername(value).orElseThrow();
+        return user;
+    }
+
     public UserDetails getFindUncle(String value) {
         UserDetails user = repository.findByUsername(value).orElseThrow();
         return user;

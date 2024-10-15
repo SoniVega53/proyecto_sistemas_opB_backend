@@ -1,5 +1,6 @@
 package com.proyecto.grupo_umg2024.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,13 +31,12 @@ public class ArticleService implements ServiceCRUD<Articles> {
         Optional<Articles> res = repository.findById(value);
         return res.isPresent() ? res.get() : null;
     }
+    
 
     @Override
     public void deleteFind(Articles value) {
         repository.delete(value);
     }
 
-    
-    
     
 }
