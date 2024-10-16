@@ -12,7 +12,7 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("http://172.18.0.1:4200"); // Agrega el dominio permitido
+        corsConfiguration.addAllowedOrigin("http://localhost:4200"); // Agrega el dominio permitido
         corsConfiguration.addAllowedMethod("*"); // Permitir todos los métodos (GET, POST, etc.)
         corsConfiguration.addAllowedHeader("*"); // Permitir todos los headers
         corsConfiguration.setAllowCredentials(true); // Permitir credenciales (cookies, authorization headers, etc.)

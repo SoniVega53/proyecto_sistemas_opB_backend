@@ -41,7 +41,6 @@ public class ApplicationConfig {
     @Bean
     public UserDetailsService userDetailService() {
         return username -> {
-            System.out.println("Fetching user with username: " + username);
             return userRepository.findByUsername(username)
                 .orElseThrow(() -> {
                     System.out.println("User not found: " + username);
