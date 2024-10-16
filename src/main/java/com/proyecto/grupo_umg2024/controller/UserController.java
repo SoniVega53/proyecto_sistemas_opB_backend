@@ -19,7 +19,7 @@ import com.proyecto.grupo_umg2024.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@CrossOrigin(origins = "http://172.18.0.1:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/proyecto/")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
@@ -41,7 +41,7 @@ public class UserController {
         return null;
     }
 
-    @PostMapping("usuario")
+    @PostMapping("user/usuario")
     public ResponseEntity<BaseResponse> login(@RequestParam String token) {
         try {
             return ResponseEntity.ok(BaseResponse.builder().code("200").message("Inicio Correctamente")

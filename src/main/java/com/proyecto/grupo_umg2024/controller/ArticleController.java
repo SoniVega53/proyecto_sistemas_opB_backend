@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@CrossOrigin(origins = "http://172.18.0.1:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/proyecto/")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
