@@ -76,7 +76,7 @@ public class UserController {
                     BaseResponse.builder().code("400").message("Surgio Algo Inesperado").build());
         }
     }
-}
+
 
 @PostMapping("user/usuario/update/password/{id}")
     public ResponseEntity<BaseResponse> updateUsuarioPassword(@PathVariable Long id,
@@ -115,12 +115,7 @@ public class UserController {
             return ResponseEntity.ok(
                     BaseResponse.builder().code("400").message("Usuario no Existe o Contraseña es invalida").build());
 
-        }
-    } catch (Exception e) {
-        return ResponseEntity.status(500).body(BaseResponse.builder()
-            .code("500")
-            .message("Error")
-            .build());
+        }   
     }
 
     public boolean checkPassword(String rawPassword, String encodedPassword) {
@@ -130,7 +125,5 @@ public class UserController {
             return false;
         }
     }
-
-}
 
 }
