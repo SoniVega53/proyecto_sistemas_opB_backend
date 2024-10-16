@@ -20,14 +20,14 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @CrossOrigin(origins = "http://172.18.0.1:4200")
-@RequestMapping("/api/proyecto/user")
+@RequestMapping("/api/proyecto/")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService service;
 
-    @GetMapping("see")
+    @GetMapping("admin/see")
     public List<User> getDataList() {
         return service.getDataList();
     }
