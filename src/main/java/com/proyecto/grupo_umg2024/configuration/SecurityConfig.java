@@ -24,7 +24,6 @@ public class SecurityConfig {
         private final AuthenticationProvider authProvider;
         private final String apiAuth = "/api/proyecto/noauth/**";
         private final String apiAuthAdmin = "/api/proyecto/admin/**";
-        private final String apiAuthUser = "/api/proyecto/user/**";
 
         @Bean
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
