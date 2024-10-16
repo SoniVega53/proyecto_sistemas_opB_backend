@@ -34,9 +34,9 @@ public class AuthenticationController {
                         .message("Se creo correctamente")
                         .entity(userCreate).build());
             }
-            return ResponseEntity.ok(BaseResponse.builder().code("400").message("Por favor revice sus datos").build());
+            return ResponseEntity.ok(BaseResponse.builder().code("400").message("Por favor revise sus datos").build());
         } catch (Exception e) {
-            return ResponseEntity.ok(BaseResponse.builder().code("400").message("Este Usuario ya existente").build());
+            return ResponseEntity.ok(BaseResponse.builder().code("400").message("Este usuario ya existe").build());
         }
     }
 

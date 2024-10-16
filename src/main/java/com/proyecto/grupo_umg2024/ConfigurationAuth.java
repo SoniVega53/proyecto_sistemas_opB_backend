@@ -30,7 +30,7 @@ public class ConfigurationAuth {
                         .email("admin@gmail.com")
                         .build());
             }
-
         };
     }
+       
 }

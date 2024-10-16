@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/proyecto/")
 @SuppressWarnings("rawtypes")
 @RequiredArgsConstructor
+
 public class UserController {
 
     private final UserService service;
@@ -74,8 +76,9 @@ public class UserController {
                     BaseResponse.builder().code("400").message("Surgio Algo Inesperado").build());
         }
     }
+}
 
-    @PostMapping("user/usuario/update/password/{id}")
+@PostMapping("user/usuario/update/password/{id}")
     public ResponseEntity<BaseResponse> updateUsuarioPassword(@PathVariable Long id,
             @RequestBody RegisterRequest user) {
         try {
@@ -111,7 +114,13 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.ok(
                     BaseResponse.builder().code("400").message("Usuario no Existe o Contraseña es invalida").build());
+
         }
+    } catch (Exception e) {
+        return ResponseEntity.status(500).body(BaseResponse.builder()
+            .code("500")
+            .message("Error")
+            .build());
     }
 
     public boolean checkPassword(String rawPassword, String encodedPassword) {
@@ -121,4 +130,7 @@ public class UserController {
             return false;
         }
     }
+
+}
+
 }
